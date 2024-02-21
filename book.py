@@ -1,23 +1,26 @@
 import sqlite3
 
-def create_tables():  #creating a database name book.db
-    connection = sqlite3.connect('book.db') #creating a connection with sqlite3
+def create_tables():  #creating a database name book.sqlite
+    connection = sqlite3.connect('book.sqlite') #creating a connection with sqlite3
     cursor = connection.cursor()
     
 #creting table , columns
     cursor.execute(""" 
-    create table book(
+    create table book_dir(
                    book_id int not null primary key,
-                   book_name varchar2 not null,
-                   author char not null,
-                   genre char not null
+                   book_name text not null,
+                   author text not null,
+                   genre text not null
     )
 """)
+    
+
     connection.commit()
     connection.close()
 
-if __int__=="__main__":  # when we want just lines of specific code to be executes, we use this.
-    create_tables()
+
+  # when we want just lines of specific code to be executes, we use this.
+create_tables()
 
 
 
